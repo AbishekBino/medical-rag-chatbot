@@ -1,0 +1,29 @@
+# Core RAG
+langchain==0.3.25
+langchain-community==0.3.24
+langchain-google-genai==2.1.4
+langchain-huggingface==0.2.0
+chromadb==1.0.8
+sentence-transformers==4.1.0
+
+# PDF handling
+pypdf==5.4.0
+
+# Backend
+fastapi==0.115.9
+uvicorn==0.34.2
+python-multipart==0.0.20
+pydantic==2.11.4
+
+# Agent / Search
+tavily-python==0.7.7
+
+# Evaluation
+ragas==0.2.14
+datasets==2.21.0
+
+# Tracing
+langsmith==0.3.45
+
+# Utilities
+python-dotenv==1.1.0
