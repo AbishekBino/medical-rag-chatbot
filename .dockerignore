@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.git/
+notebooks/
+ui/node_modules/
+ui/dist/
+eval/results/

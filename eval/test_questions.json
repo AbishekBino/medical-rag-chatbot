@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the maximum daily dose of paracetamol for adults?",
+    "ground_truth": "The maximum daily dose of paracetamol for adults is 4 grams (4000 mg) per day, taken as 1 gram three or four times daily."
+  },
+  {
+    "question": "What is the recommended first-line treatment for hypertension?",
+    "ground_truth": "Lifestyle modifications and anti-hypertensive medications, either alone or in combination, are recommended. Five drug classes are commonly used: ACE inhibitors, ARBs, calcium channel blockers, beta blockers, and thiazide diuretics."
+  },
+  {
+    "question": "What are the five moments of hand hygiene?",
+    "ground_truth": "The five moments are: before touching a patient, before a clean/aseptic procedure, after body fluid exposure risk, after touching a patient, and after touching patient surroundings."
+  },
+  {
+    "question": "What are the common side effects of ACE inhibitors?",
+    "ground_truth": "Common side effects of ACE inhibitors include dry cough, angioedema, dizziness, renal impairment, electrolyte imbalance (hyperkalemia), and diarrhea. They are contraindicated in pregnancy."
+  },
+  {
+    "question": "What lifestyle changes help prevent cardiovascular disease?",
+    "ground_truth": "Regular physical activity, a healthy diet, not smoking, limiting alcohol consumption, and weight management help prevent cardiovascular disease."
+  },
+  {
+    "question": "What is the starting dose of enalapril for hypertension?",
+    "ground_truth": "The starting dose of enalapril is 5 mg once daily, increased every 4-6 weeks if needed up to a maximum of 40 mg daily."
+  },
+  {
+    "question": "What is the starting dose of amlodipine for hypertension?",
+    "ground_truth": "The starting dose of amlodipine is 5 mg once daily, increased after 4-6 weeks if needed to a maximum of 10 mg once daily."
+  },
+  {
+    "question": "What are the side effects of thiazide diuretics?",
+    "ground_truth": "Side effects of thiazide diuretics include electrolyte disturbances, increased urinary frequency, dyslipidaemia, and new-onset diabetes mellitus."
+  },
+  {
+    "question": "What are the warning signs of severe depression according to mhGAP guidelines?",
+    "ground_truth": "Warning signs include persistent sadness, loss of interest, fatigue, sleep disturbance, and suicidal ideation."
+  },
+  {
+    "question": "What is the dosage of paracetamol for a child under 1 month?",
+    "ground_truth": "For a child under 1 month, the dose is 10 mg/kg, 3 or 4 times daily, with a maximum of 40 mg/kg daily."
+  },
+  {
+    "question": "What is the maximum daily dose of paracetamol for a child 1 month and over?",
+    "ground_truth": "For a child 1 month and over, the dose is 15 mg/kg, 3 or 4 times daily, with a maximum of 60 mg/kg daily."
+  },
+  {
+    "question": "What precautions should be taken with ACE inhibitors in elderly patients?",
+    "ground_truth": "In elderly patients, those taking a diuretic, or those with renal impairment, ACE inhibitors should be started at a lower dose (e.g. 2.5 mg enalapril once daily) and adjusted according to renal function."
+  },
+  {
+    "question": "Can ACE inhibitors and ARBs be used together?",
+    "ground_truth": "No, ACE inhibitors should not be used simultaneously with ARBs (angiotensin II receptor blockers)."
+  },
+  {
+    "question": "What are the contraindications for ACE inhibitors?",
+    "ground_truth": "ACE inhibitors are contraindicated in pregnancy, aortic stenosis, and renal artery stenosis, and should be used with caution in women of childbearing age."
+  },
+  {
+    "question": "What is angioedema and which drug class commonly causes it?",
+    "ground_truth": "Angioedema is swelling under the skin, and it is a common adverse effect of ACE inhibitors and ARBs."
+  },
+  {
+    "question": "What salt intake is recommended for hypertension management?",
+    "ground_truth": "A salt intake of less than 5 grams per day is recommended for managing hypertension."
+  },
+  {
+    "question": "What is the injectable form dosage of paracetamol for neonates?",
+    "ground_truth": "For neonates, the injectable dose is 7.5 mg/kg (0.75 ml/kg) every 6 hours, administered over 15 minutes, with a maximum of 30 mg/kg daily."
+  },
+  {
+    "question": "What drugs interact with amlodipine to increase its effects?",
+    "ground_truth": "Fluconazole, erythromycin, fluoxetine, and ritonavir can increase the effects of amlodipine, particularly its antihypertensive effect."
+  },
+  {
+    "question": "What drugs decrease the effects of amlodipine?",
+    "ground_truth": "Rifampicin, phenytoin, phenobarbital, and carbamazepine decrease the effects of amlodipine."
+  },
+  {
+    "question": "What is the indication for telmisartan and its starting dose?",
+    "ground_truth": "Telmisartan is an angiotensin II receptor blocker, started at 40 mg once daily, increasing to 80 mg once daily after 4-6 weeks if needed."
+  },
+  {
+    "question": "What is hyperkalemia and which drugs commonly cause it?",
+    "ground_truth": "Hyperkalemia is a high potassium level in the blood. It is commonly caused by ACE inhibitors and angiotensin II receptor blockers, especially in patients with renal impairment."
+  },
+  {
+    "question": "What organ damage can paracetamol overdose cause?",
+    "ground_truth": "Paracetamol intoxication causes severe hepatic cytolysis (liver cell damage)."
+  },
+  {
+    "question": "When should hand hygiene be performed after touching a patient?",
+    "ground_truth": "Hand hygiene should be performed after touching a patient, as well as after touching patient surroundings."
+  },
+  {
+    "question": "What forms and strengths is paracetamol available in for oral use?",
+    "ground_truth": "Paracetamol oral forms include 100 mg and 500 mg tablets, 100 mg dispersible tablets, and 120 mg/5 ml oral suspension."
+  },
+  {
+    "question": "Should ACE inhibitors be used during pregnancy?",
+    "ground_truth": "No, ACE inhibitors are contraindicated in pregnancy and should be used with caution in women who may become pregnant."
+  }
+]

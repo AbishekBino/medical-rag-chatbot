@@ -1,0 +1,55 @@
+question,answer,ground_truth,faithfulness,answer_relevancy,context_precision,context_recall
+What is the maximum daily dose of paracetamol for adults?,The maximum daily dose of paracetamol for adults is 4 g.,"The maximum daily dose of paracetamol for adults is 4 grams (4000 mg) per day, taken as 1 gram three or four times daily.",1.0,1.0,0.25,1.0
+What is the recommended first-line treatment for hypertension?,"Calcium channel blockers are recommended as first-line monotherapy. If combination therapy is needed, they should be used with either diuretics or ACEIs/ARBs.","Lifestyle modifications and anti-hypertensive medications, either alone or in combination, are recommended. Five drug classes are commonly used: ACE inhibitors, ARBs, calcium channel blockers, beta blockers, and thiazide diuretics.",1.0,0.9,0.75,1.0
+What are the five moments of hand hygiene?,"Based on the provided document, the five moments for hand hygiene are:
+
+1. Before touching a patient
+2. Before a clean/aseptic procedure
+3. After body fluid exposure risk
+4. After touching a patient
+5. After touching patient surroundings","The five moments are: before touching a patient, before a clean/aseptic procedure, after body fluid exposure risk, after touching a patient, and after touching patient surroundings.",1.0,1.0,0.8,1.0
+What are the common side effects of ACE inhibitors?,"The common adverse effects of ACE inhibitors are: angioedema (swelling under the skin), cough, diarrhoea, dizziness, electrolyte imbalance, and renal impairment.","Common side effects of ACE inhibitors include dry cough, angioedema, dizziness, renal impairment, electrolyte imbalance (hyperkalemia), and diarrhea. They are contraindicated in pregnancy.",1.0,1.0,0.5,1.0
+What lifestyle changes help prevent cardiovascular disease?,"To help prevent hypertension and manage cardiovascular risk, the following lifestyle modifications are recommended:
+
+*   **Smoking and Alcohol:** Advise smoking cessation and a reduction in alcohol consumption.
+*   **Diet:** 
+    *   Limit salt intake to less than 5 g (one teaspoon) per day.
+    *   Follow a low-fat, low-sugar diet.
+*   **Weight Management:** If BMI is greater than 25 kg/m2, suggest a goal of losing 5 to 10% of body weight.
+*   **Physical Activity:** Engage in regular physical activity. The guideline notes that physical infrastructure, such as trails for walking and cycling, helps promote this.
+*   **General Approach:** Lifestyle modifications should be combined with anti-hypertensive medication, though they may be tried alone in individuals with high-normal blood pressure. These choices are important for the prevention of hypertension and the control of other non-communicable diseases.","Regular physical activity, a healthy diet, not smoking, limiting alcohol consumption, and weight management help prevent cardiovascular disease.",1.0,1.0,0.75,1.0
+What is the starting dose of enalapril for hypertension?,"The starting dose of enalapril for hypertension is 5 mg once daily. For elderly patients, patients taking a diuretic, or patients with renal impairment, the starting dose is 2.5 mg once daily.","The starting dose of enalapril is 5 mg once daily, increased every 4-6 weeks if needed up to a maximum of 40 mg daily.",1.0,1.0,0.75,1.0
+What is the starting dose of amlodipine for hypertension?,"For adults, the starting dose of amlodipine for hypertension is 5 mg once daily. In older patients or patients with hepatic impairment, the starting dose is 2.5 mg once daily.","The starting dose of amlodipine is 5 mg once daily, increased after 4-6 weeks if needed to a maximum of 10 mg once daily.",1.0,1.0,0.5,0.8
+What are the side effects of thiazide diuretics?,"The side effects of thiazide diuretics may include hyperglycaemia, hypokalaemia, hypomagnesaemia, and hyperuricaemia.","Side effects of thiazide diuretics include electrolyte disturbances, increased urinary frequency, dyslipidaemia, and new-onset diabetes mellitus.",1.0,1.0,0.25,0.4
+What are the warning signs of severe depression according to mhGAP guidelines?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"Warning signs include persistent sadness, loss of interest, fatigue, sleep disturbance, and suicidal ideation.",0.0,0.0,0.0,0.0
+What is the dosage of paracetamol for a child under 1 month?,"The dosage for a child under 1 month is 10 mg/kg, 3 or 4 times daily, with a maximum of 40 mg/kg daily.","For a child under 1 month, the dose is 10 mg/kg, 3 or 4 times daily, with a maximum of 40 mg/kg daily.",1.0,1.0,0.5,1.0
+What is the maximum daily dose of paracetamol for a child 1 month and over?,"For a child 1 month and over, the maximum daily dose of oral paracetamol is 60 mg/kg.","For a child 1 month and over, the dose is 15 mg/kg, 3 or 4 times daily, with a maximum of 60 mg/kg daily.",1.0,1.0,0.25,1.0
+What precautions should be taken with ACE inhibitors in elderly patients?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"In elderly patients, those taking a diuretic, or those with renal impairment, ACE inhibitors should be started at a lower dose (e.g. 2.5 mg enalapril once daily) and adjusted according to renal function.",1.0,0.0,0.0,0.0
+Can ACE inhibitors and ARBs be used together?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"No, ACE inhibitors should not be used simultaneously with ARBs (angiotensin II receptor blockers).",0.0,0.0,0.0,0.0
+What are the contraindications for ACE inhibitors?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"ACE inhibitors are contraindicated in pregnancy, aortic stenosis, and renal artery stenosis, and should be used with caution in women of childbearing age.",0.0,0.0,0.0,0.0
+What is angioedema and which drug class commonly causes it?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"Angioedema is swelling under the skin, and it is a common adverse effect of ACE inhibitors and ARBs.",1.0,0.0,0.0,0.0
+What salt intake is recommended for hypertension management?,"The recommended salt intake for hypertension management is less than 5 grams of salt per day (equivalent to approximately one level teaspoon). This includes salt added while cooking or eating, as well as salt contained in processed foods and bread.",A salt intake of less than 5 grams per day is recommended for managing hypertension.,1.0,1.0,1.0,1.0
+What is the injectable form dosage of paracetamol for neonates?,"The dosage for injectable paracetamol for a neonate is 7.5 mg/kg (0.75 ml/kg) every 6 hours, to be administered over 15 minutes (maximum 30 mg/kg daily).","For neonates, the injectable dose is 7.5 mg/kg (0.75 ml/kg) every 6 hours, administered over 15 minutes, with a maximum of 30 mg/kg daily.",1.0,1.0,0.25,1.0
+What drugs interact with amlodipine to increase its effects?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"Fluconazole, erythromycin, fluoxetine, and ritonavir can increase the effects of amlodipine, particularly its antihypertensive effect.",1.0,0.0,0.0,0.0
+What drugs decrease the effects of amlodipine?,"Based on the provided document, the following drugs decrease the effects of amlodipine:
+
+*   Rifampicin
+*   Phenytoin
+*   Phenobarbital
+*   Carbamazepine","Rifampicin, phenytoin, phenobarbital, and carbamazepine decrease the effects of amlodipine.",1.0,1.0,0.25,1.0
+What is the indication for telmisartan and its starting dose?,I don't have enough information in my documents to answer this. Please consult a medical professional.,"Telmisartan is an angiotensin II receptor blocker, started at 40 mg once daily, increasing to 80 mg once daily after 4-6 weeks if needed.",0.0,0.0,0.0,0.0
+What is hyperkalemia and which drugs commonly cause it?,"Hyperkalaemia is defined as a serum potassium level greater than 5 mmol/L. It is classified into three categories:
+*   **Mild:** >5.0 to <5.5 mmol/L
+*   **Moderate:** 5.5 to 6.0 mmol/L
+*   **Severe:** >6.0 mmol/L
+
+According to the provided text, hyperkalaemia can be associated with the administration of RAAS inhibitors. Additionally, the text notes that treatment for conditions requiring potassium supplementation includes the use of RAAS inhibitors and potassium-sparing diuretics.","Hyperkalemia is a high potassium level in the blood. It is commonly caused by ACE inhibitors and angiotensin II receptor blockers, especially in patients with renal impairment.",1.0,0.8,0.75,0.8
+What organ damage can paracetamol overdose cause?,Paracetamol intoxication can cause hepatic cytolysis (severe liver damage).,Paracetamol intoxication causes severe hepatic cytolysis (liver cell damage).,1.0,0.9,0.33,1.0
+When should hand hygiene be performed after touching a patient?,"Hand hygiene should be performed when leaving the patient zone after a care sequence, before contact with an object belonging to the health-care area. This is best visualized as crossing the virtual line constituted by the patient zone.","Hand hygiene should be performed after touching a patient, as well as after touching patient surroundings.",1.0,1.0,0.5,0.2
+What forms and strengths is paracetamol available in for oral use?,"Paracetamol (acetaminophen) for oral use is available in the following forms and strengths:
+
+*   100 mg tablets
+*   500 mg tablets
+*   100 mg dispersible tablet
+*   120 mg/5 ml oral suspension","Paracetamol oral forms include 100 mg and 500 mg tablets, 100 mg dispersible tablets, and 120 mg/5 ml oral suspension.",1.0,0.8,0.5,1.0
+Should ACE inhibitors be used during pregnancy?,"No, ACE inhibitors (ACE-Is) are contraindicated and should be stopped prior to conception to avoid foetal harm.","No, ACE inhibitors are contraindicated in pregnancy and should be used with caution in women who may become pregnant.",1.0,1.0,0.5,1.0
