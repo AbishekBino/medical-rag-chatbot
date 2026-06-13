@@ -16,7 +16,11 @@ app = FastAPI(
 # The browser blocks it for security. This middleware lifts that block.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],  # React dev servers
+    allow_origins=[
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://medical-rag-chatbot-xxxx.vercel.app",  # ← replace xxxx with your actual URL
+],  # React dev servers
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
