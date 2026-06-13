@@ -19,7 +19,7 @@ app.add_middleware(
     allow_origins=[
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://medical-rag-chatbot-xxxx.vercel.app",  # ← replace xxxx with your actual URL
+    "https://medical-rag-chatbot-4ixr9demr-abishek-bino-s-projects.vercel.app",
 ],  # React dev servers
     allow_credentials=True,
     allow_methods=["*"],
