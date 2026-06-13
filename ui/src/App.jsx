@@ -1,20 +1,37 @@
 import { useState, useRef, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api"
 
+const WELCOME_MESSAGE = { role: "bot", text: "Hi! Ask me anything about the medical documents I've been trained on — or any general medical question.", sources: [] }
+
 function App() {
-  const [messages, setMessages] = useState([
-    { role: "bot", text: "Hi! Ask me anything about the medical documents I've been trained on.", sources: [] }
-  ])
+  const [messages, setMessages] = useState(() => {
+    try {
+      const saved = localStorage.getItem("rag-chat-messages")
+      return saved ? JSON.parse(saved) : [WELCOME_MESSAGE]
+    } catch {
+      return [WELCOME_MESSAGE]
+    }
+  })
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
-  const [sessionId] = useState(() => "session-" + Math.random().toString(36).substring(2, 10))
+  const [sessionId, setSessionId] = useState(() => {
+    return localStorage.getItem("rag-chat-session-id") || "session-" + Math.random().toString(36).substring(2, 10)
+  })
   const messagesEndRef = useRef(null)
 
-  // Auto-scroll to bottom on new message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
+
+  useEffect(() => {
+    localStorage.setItem("rag-chat-messages", JSON.stringify(messages))
+  }, [messages])
+
+  useEffect(() => {
+    localStorage.setItem("rag-chat-session-id", sessionId)
+  }, [sessionId])
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return
@@ -25,7 +42,7 @@ function App() {
     setLoading(true)
 
     try {
-      const res = await fetch(`${API_URL}/chat`, {
+      const res = await fetch(`${API_URL}/chat-agent`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: userMessage.text, session_id: sessionId })
@@ -38,7 +55,7 @@ function App() {
     } catch (err) {
       setMessages(prev => [...prev, {
         role: "bot",
-        text: "⚠️ Could not reach the server. Is the backend running?",
+        text: "Could not reach the server. Is the backend running?",
         sources: []
       }])
     } finally {
@@ -53,13 +70,33 @@ function App() {
     }
   }
 
+  const startNewChat = async () => {
+    if (loading) return
+    try {
+      await fetch(`${API_URL}/history/${sessionId}`, { method: "DELETE" })
+    } catch (err) {
+      // non-fatal — proceed to reset UI regardless
+    }
+    setMessages([WELCOME_MESSAGE])
+    setSessionId("session-" + Math.random().toString(36).substring(2, 10))
+  }
+
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col items-center py-6 px-4">
 
       {/* Header */}
-      <div className="w-full max-w-2xl mb-4">
-        <h1 className="text-2xl font-bold text-white">🩺 Medical RAG Assistant</h1>
-        <p className="text-slate-400 text-sm">Ask questions grounded in WHO &amp; AIIMS guidelines</p>
+      <div className="w-full max-w-2xl mb-4 flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-white">🩺 Medical RAG Assistant</h1>
+          <p className="text-slate-400 text-sm">PDFs + web search enabled</p>
+        </div>
+        <button
+          onClick={startNewChat}
+          disabled={loading}
+          className="bg-slate-700 hover:bg-slate-600 disabled:opacity-50 text-white text-sm font-medium rounded-xl px-3 py-2 transition-colors"
+        >
+          + New chat
+        </button>
       </div>
 
       {/* Chat window */}
@@ -68,13 +105,28 @@ function App() {
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.map((msg, i) => (
-            <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+            <div key={i} className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+
+              {msg.role === "bot" && (
+                <div className="w-7 h-7 rounded-full bg-slate-700 flex items-center justify-center text-sm flex-shrink-0">
+                  🩺
+                </div>
+              )}
+
               <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                 msg.role === "user"
                   ? "bg-blue-600 text-white"
                   : "bg-slate-700 text-slate-100"
               }`}>
-                <p className="whitespace-pre-wrap text-sm leading-relaxed">{msg.text}</p>
+                {msg.role === "bot" ? (
+                  <div className="text-sm leading-relaxed prose prose-invert prose-sm max-w-none
+                                   prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5
+                                   prose-strong:text-white prose-headings:text-white">
+                    <ReactMarkdown>{msg.text}</ReactMarkdown>
+                  </div>
+                ) : (
+                  <p className="whitespace-pre-wrap text-sm leading-relaxed">{msg.text}</p>
+                )}
 
                 {/* Source citations */}
                 {msg.sources && msg.sources.length > 0 && (
@@ -87,12 +139,21 @@ function App() {
                   </div>
                 )}
               </div>
+
+              {msg.role === "user" && (
+                <div className="w-7 h-7 rounded-full bg-blue-700 flex items-center justify-center text-sm flex-shrink-0">
+                  🙂
+                </div>
+              )}
             </div>
           ))}
 
           {/* Typing indicator */}
           {loading && (
-            <div className="flex justify-start">
+            <div className="flex gap-2 justify-start">
+              <div className="w-7 h-7 rounded-full bg-slate-700 flex items-center justify-center text-sm flex-shrink-0">
+                🩺
+              </div>
               <div className="bg-slate-700 text-slate-300 rounded-2xl px-4 py-3 text-sm">
                 <span className="inline-flex gap-1">
                   <span className="animate-bounce">●</span>
