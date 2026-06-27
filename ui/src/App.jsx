@@ -21,17 +21,29 @@ function App() {
   })
   const messagesEndRef = useRef(null)
 
+  // ── Auto-scroll to latest message ─────────────────────────
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
+  // ── Persist messages to localStorage ──────────────────────
   useEffect(() => {
     localStorage.setItem("rag-chat-messages", JSON.stringify(messages))
   }, [messages])
 
+  // ── Persist session ID to localStorage ────────────────────
   useEffect(() => {
     localStorage.setItem("rag-chat-session-id", sessionId)
   }, [sessionId])
+
+  // ── CAUSE 1 FIX: Wake up Render backend on page load ──────
+  // Fires a silent /health ping the moment the page opens.
+  // While the user reads the welcome message, the backend is
+  // already warming up — so by the time they send their first
+  // question, the cold start delay is already gone.
+  useEffect(() => {
+    fetch(`${API_URL}/health`).catch(() => {})
+  }, [])
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return
@@ -70,15 +82,14 @@ function App() {
     }
   }
 
-  const startNewChat = async () => {
+  // ── Non-blocking New Chat (startNewChat fix) ───────────────
+  // UI resets instantly. Backend DELETE fires in background
+  // without blocking — so button always feels responsive.
+  const startNewChat = () => {
     if (loading) return
-    try {
-      await fetch(`${API_URL}/history/${sessionId}`, { method: "DELETE" })
-    } catch (err) {
-      // non-fatal — proceed to reset UI regardless
-    }
     setMessages([WELCOME_MESSAGE])
     setSessionId("session-" + Math.random().toString(36).substring(2, 10))
+    fetch(`${API_URL}/history/${sessionId}`, { method: "DELETE" }).catch(() => {})
   }
 
   return (
